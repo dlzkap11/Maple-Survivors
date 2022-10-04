@@ -152,16 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b711e3e58d81fa44da24b7bdff957875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnerPosition:
-  - {fileID: 1539763490}
-  - {fileID: 1044810831}
-  - {fileID: 1231763879}
-  - {fileID: 1664613812}
-  - {fileID: 611853221}
-  - {fileID: 682360356}
-  target: {fileID: 487900498}
+  enemy: {fileID: 994879984}
+  player: {fileID: 1052218742}
   maxSpawnDelay: 3
   curSpawnDelay: 0
+  timer: 0
+  radius: 12
 --- !u!4 &214222431
 Transform:
   m_ObjectHideFlags: 0
@@ -237,7 +233,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
-  damage: 0
   MaxHP: 100
   HP: 0
 --- !u!58 &487900501
@@ -377,7 +372,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
-  damage: 0
   MaxHP: 100
   HP: 0
 --- !u!58 &490138565
@@ -814,7 +808,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
-  damage: 0
   MaxHP: 100
   HP: 0
 --- !u!58 &933943600
@@ -1016,7 +1009,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
-  damage: 0
   MaxHP: 100
   HP: 0
 --- !u!50 &994879989
@@ -1558,7 +1550,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
-  damage: 0
   MaxHP: 100
   HP: 0
 --- !u!58 &1711057429
