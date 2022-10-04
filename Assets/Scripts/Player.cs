@@ -46,4 +46,27 @@ public class Player : MonoBehaviour
                 break;
         }
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy") //Enemy 충돌 시
+        {
+            OnDamaged();
+        }
+    }
+
+    void OnDamaged()
+    {
+        gameObject.layer = 3; // layer = Invincible
+        HP -= 10; //test로 10 감소
+        rend.color = Color.red;
+
+        Invoke("OffDamaged", 1f);
+    }
+
+    void OffDamaged()
+    {
+        gameObject.layer = 6; // layer = Player
+        rend.color = Color.white;
+    }
 }
