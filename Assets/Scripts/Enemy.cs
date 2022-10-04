@@ -9,12 +9,15 @@ public class Enemy : MonoBehaviour
 
     public float MoveSpeed; //이동속도
     public float damage; //공격력
+    public float MaxHP; //최대체력
+    public float HP; //현재체력
 
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
 
         target = GameObject.FindWithTag("Player"); //Player 태그를 타겟으로 지정
+        HP = MaxHP;
     }
 
     void Update()
