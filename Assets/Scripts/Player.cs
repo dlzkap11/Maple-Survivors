@@ -58,10 +58,12 @@ public class Player : MonoBehaviour
     void OnDamaged()
     {
         gameObject.layer = 3; // layer = Invincible
-        HP -= 10; //test로 10 감소
-        rend.color = Color.red;
+        HP -= Enemy.damage;
+        rend.color = Color.red; //피격 색상
 
-        Invoke("OffDamaged", 1f);
+        Debug.Log("피격 : HP " + Enemy.damage + " 감소.");
+
+        Invoke("OffDamaged", 1f); //무적시간
     }
 
     void OffDamaged()

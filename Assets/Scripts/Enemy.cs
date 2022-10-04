@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     SpriteRenderer rend;
 
     public float MoveSpeed; //이동속도
-    public float damage; //공격력
+    public static float damage; //공격력
     public float MaxHP; //최대체력
     public float HP; //현재체력
 
@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
 
         target = GameObject.FindWithTag("Player"); //Player 태그를 타겟으로 지정
         HP = MaxHP;
+
+        damage = 10;
     }
 
     void Update()
