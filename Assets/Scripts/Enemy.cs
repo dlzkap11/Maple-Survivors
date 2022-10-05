@@ -19,14 +19,13 @@ public class Enemy : MonoBehaviour
         target = GameObject.FindWithTag("Player"); //Player 태그를 타겟으로 지정
         HP = MaxHP;
 
-        damage = 10;
+        damage = 10; //초기 공격력 (후에 변경)
     }
 
     void Update()
     {
         targetInit();
         Chase();
-        attack();
     }
 
     void targetInit() //타겟(플레이어) 초기화
@@ -44,10 +43,5 @@ public class Enemy : MonoBehaviour
             rend.flipX = true; //우측이동
         else if (target.transform.position.x < transform.position.x)
             rend.flipX = false; //좌측이동
-    }
-
-    void attack()
-    {
-
     }
 }

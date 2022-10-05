@@ -10,7 +10,7 @@ public class Spawn : MonoBehaviour
     public float curSpawnDelay; //딜레이시간
     public float timer; //임시 타이머
     public float radius; //원 반지름
-   
+    
 
     void Start()
     {
@@ -22,12 +22,12 @@ public class Spawn : MonoBehaviour
         curSpawnDelay += Time.deltaTime;
         timer += Time.deltaTime;
 
+        //스폰 중점
         transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10);
 
         if (curSpawnDelay > maxSpawnDelay)
         {
             SpawnEnemy();
-
         }
     }
     Vector3 GetRandomPosition()
@@ -51,17 +51,21 @@ public class Spawn : MonoBehaviour
     }
     void SpawnEnemy()
     {
-        if (timer < 5f)
+        //타이머 미설정으로 인한 임시 시간
+
+        if (timer < 5f) //5초 전
         {
             Instantiate(enemy, GetRandomPosition(), Quaternion.identity);
-            maxSpawnDelay = Random.Range(0f, 3f);
-            curSpawnDelay = 0;
+            maxSpawnDelay = Random.Range(0f, 3f); //스폰 딜레이(랜덤)
+
+            curSpawnDelay = 0; //스폰 딜레이 초기화
         }
-        else if (timer > 5f)
+        else if (timer > 5f) //5초 후
         {
             Instantiate(enemy, GetRandomPosition(), Quaternion.identity);
-            maxSpawnDelay = Random.Range(0f, 0.1f);
-            curSpawnDelay = 0;
+            maxSpawnDelay = Random.Range(0f, 0.1f); //스폰 딜레이(랜덤)
+
+            curSpawnDelay = 0; //스폰 딜레이 초기화
         }
 
     }
