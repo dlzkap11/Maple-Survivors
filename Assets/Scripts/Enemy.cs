@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
     GameObject target;
     SpriteRenderer rend;
 
+    Color normalColor; //기본 색
+    Color hitColor; //피격 시 색
+
     public float MoveSpeed; //이동속도
     public static float damage; //공격력
     public float MaxHP; //최대체력
@@ -20,6 +23,13 @@ public class Enemy : MonoBehaviour
         HP = MaxHP;
 
         damage = 10; //초기 공격력 (후에 변경)
+
+        normalColor = rend.color;
+        hitColor = normalColor;
+        hitColor.r -= 0.5f;
+        hitColor.g -= 0.5f;
+        hitColor.b -= 0.5f;
+
     }
 
     void Update()
@@ -43,5 +53,34 @@ public class Enemy : MonoBehaviour
             rend.flipX = true; //우측이동
         else if (target.transform.position.x < transform.position.x)
             rend.flipX = false; //좌측이동
+    }
+
+    void OnHit(float dmg) //피격 시
+    {
+        HP -= dmg;
+
+        if(HP <= 0)
+        {
+            Destroy(gameObject);
+        }
+        else if (HP > 0)
+        {
+            StartCoroutine("OnHitEffect");
+        }        
+    }
+    IEnumerator OnHitEffect () //피격 시 색 변화
+    {
+        rend.color = hitColor;
+        yield return new WaitForSeconds(0.1f);
+        rend.color = normalColor;
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "PlayerBullet") //PlayerBullet에 닿을 시
+        {
+            NormalBullet bullet = collision.gameObject.GetComponent<NormalBullet>();
+            OnHit(bullet.dmg);
+        }
     }
 }

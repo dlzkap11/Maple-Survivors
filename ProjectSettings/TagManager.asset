@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Breakable Structure
   - Unbreakable Structure
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX
