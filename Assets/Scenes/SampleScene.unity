@@ -1159,7 +1159,9 @@ MonoBehaviour:
   MoveSpeed: 5
   maxHP: 100
   HP: 0
-  damage: 0
+  damage: 50
+  Bullet: {fileID: 898378930809296576, guid: 4710b730ec516b44999f15e202cff18e, type: 3}
+  IsShoot: 1
   barSprite: {fileID: 1722996420}
 --- !u!212 &1052218744
 SpriteRenderer:

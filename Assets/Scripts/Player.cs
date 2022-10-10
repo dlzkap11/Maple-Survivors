@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,49 +8,62 @@ public class Player : MonoBehaviour
 {
     SpriteRenderer rend;
 
-    public float MoveSpeed; //ÀÌµ¿¼Óµµ
-    public float maxHP; //ÃÖ´ëÃ¼·Â
-    public float HP; //Ã¼·Â
-    public float damage; //°ø°İ·Â
-    
-    public Image barSprite; //Ã¼·Â¹Ù
+    public float MoveSpeed; //ì´ë™ì†ë„
+    public float maxHP; //ìµœëŒ€ì²´ë ¥
+    public float HP; //ì²´ë ¥
+    public float damage; //ê³µê²©ë ¥      
+
+    public GameObject Bullet; //ì´ì•Œ
+    public bool IsShoot = true;
+    float shootTimer = 0;
+    float shootDelay = 1.0f; //ê³µê²© ë”œë ˆì´
+
+    private Vector3 lastMoveDir = Vector3.right;
+
+    public Image barSprite; //ì²´ë ¥ë°”
 
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
 
-        HP = maxHP; //Ã¼·Â ÃÊ±âÈ­
+        HP = maxHP; //ì²´ë ¥ ì´ˆê¸°í™”
     }
 
     void Update()
     {
         Move();
 
-        barSprite.fillAmount = HP / maxHP; //Ã¼·Â ½Ç½Ã°£ Àû¿ë
+        barSprite.fillAmount = HP / maxHP; //ì²´ë ¥ ì‹¤ì‹œê°„ ì ìš©
+                
+        Shoot();
     }
 
     void Move()
     {
-        float hAxis = Input.GetAxisRaw("Horizontal");   //°¡·Î
-        float vAxis = Input.GetAxisRaw("Vertical");     //¼¼·Î
-
+        float hAxis = Input.GetAxisRaw("Horizontal");   //ê°€ë¡œ
+        float vAxis = Input.GetAxisRaw("Vertical");     //ì„¸ë¡œ
         transform.Translate(new Vector2(hAxis, vAxis) * MoveSpeed * 0.001f);
 
-        switch (hAxis) //sprite º¯°æ
+        switch (hAxis) //sprite ë³€ê²½
         {
             case 1:
-                rend.flipX = true; //¿ìÃøÀÌµ¿
+                rend.flipX = true; //ìš°ì¸¡ì´ë™
                 break;
 
             case -1:
-                rend.flipX = false; //ÁÂÃøÀÌµ¿
+                rend.flipX = false; //ì¢Œì¸¡ì´ë™
                 break;
+        }
+
+        if (hAxis != 0 || vAxis != 0)
+        {
+            lastMoveDir = new Vector3(hAxis, vAxis, 0);
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy") //Enemy Ãæµ¹ ½Ã
+        if (collision.gameObject.tag == "Enemy") //Enemy ï¿½æµ¹ ï¿½ï¿½
         {
             OnDamaged();
         }
@@ -59,11 +73,11 @@ public class Player : MonoBehaviour
     {
         gameObject.layer = 3; // layer = Invincible
         HP -= Enemy.damage;
-        rend.color = Color.red; //ÇÇ°İ »ö»ó
+        rend.color = Color.red; //ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-        Debug.Log("ÇÇ°İ : HP " + Enemy.damage + " °¨¼Ò.");
+        Debug.Log("ï¿½Ç°ï¿½ : HP " + Enemy.damage + " ï¿½ï¿½ï¿½ï¿½.");
 
-        Invoke("OffDamaged", 1f); //¹«Àû½Ã°£
+        Invoke("OffDamaged", 1f); //ï¿½ï¿½ï¿½ï¿½ï¿½Ã°ï¿½
     }
 
     void OffDamaged()
@@ -71,4 +85,20 @@ public class Player : MonoBehaviour
         gameObject.layer = 6; // layer = Player
         rend.color = Color.white;
     }
+
+    void Shoot ()
+    { 
+        if (IsShoot)
+        {
+            if (shootTimer > shootDelay)
+            {
+                GameObject a = Instantiate(Bullet, transform.position, Quaternion.identity);
+                a.GetComponent<NormalBullet>().setDir(lastMoveDir);
+                                
+                shootTimer = 0;
+            }
+            shootTimer += Time.deltaTime;
+        }
+    }
+       
 }
