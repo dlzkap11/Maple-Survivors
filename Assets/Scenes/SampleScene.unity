@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b711e3e58d81fa44da24b7bdff957875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 994879984}
+  enemy: {fileID: 2125595581801265874, guid: dac67e4a08ccec948a9eca0ac45084fe, type: 3}
   player: {fileID: 1052218742}
   maxSpawnDelay: 3
   curSpawnDelay: 0
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
-  MaxHP: 100
+  MaxHP: 10
   HP: 0
 --- !u!58 &487900501
 CircleCollider2D:
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
-  MaxHP: 100
+  MaxHP: 10
   HP: 0
 --- !u!58 &490138565
 CircleCollider2D:
@@ -820,7 +820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
-  MaxHP: 100
+  MaxHP: 10
   HP: 0
 --- !u!58 &933943600
 CircleCollider2D:
@@ -1021,7 +1021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
-  MaxHP: 100
+  MaxHP: 10
   HP: 0
 --- !u!50 &994879989
 Rigidbody2D:
@@ -1160,6 +1160,7 @@ MonoBehaviour:
   maxHP: 100
   HP: 0
   damage: 50
+  invincibleTime: 1
   Bullet: {fileID: 898378930809296576, guid: 4710b730ec516b44999f15e202cff18e, type: 3}
   IsShoot: 1
   barSprite: {fileID: 1722996420}
@@ -1615,7 +1616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
-  MaxHP: 100
+  MaxHP: 10
   HP: 0
 --- !u!58 &1711057429
 CircleCollider2D:
@@ -1827,9 +1828,9 @@ RectTransform:
   m_Father: {fileID: 2073078122}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 250}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -42}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1737963282
@@ -1882,6 +1883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e3ff174589b7fd47b9099a1854ac428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 0
   timeText:
   - {fileID: 144508021}
   - {fileID: 1048406694}

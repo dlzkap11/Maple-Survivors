@@ -58,16 +58,19 @@ public class Enemy : MonoBehaviour
     void OnHit(float dmg) //피격 시
     {
         HP -= dmg;
+        Debug.Log(this + " on damage! -" + dmg); //Log
 
         if(HP <= 0)
         {
             Destroy(gameObject);
+            Debug.Log(this + " has destroyed!"); //Log
         }
         else if (HP > 0)
         {
             StartCoroutine("OnHitEffect");
         }        
     }
+
     IEnumerator OnHitEffect () //피격 시 색 변화
     {
         rend.color = hitColor;

@@ -11,7 +11,8 @@ public class Player : MonoBehaviour
     public float MoveSpeed; //이동속도
     public float maxHP; //최대체력
     public float HP; //체력
-    public float damage; //공격력      
+    public float damage; //공격력
+    public float invincibleTime; //무적시간
 
     public GameObject Bullet; //총알
     public bool IsShoot = true;
@@ -63,7 +64,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy") //Enemy �浹 ��
+        if (collision.gameObject.tag == "Enemy") //Enemy에게 피격 시
         {
             OnDamaged();
         }
@@ -73,11 +74,11 @@ public class Player : MonoBehaviour
     {
         gameObject.layer = 3; // layer = Invincible
         HP -= Enemy.damage;
-        rend.color = Color.red; //�ǰ� ����
+        rend.color = Color.red; //피격시 색상변화
 
-        Debug.Log("�ǰ� : HP " + Enemy.damage + " ����.");
+        Debug.Log("Player on damage! -" + Enemy.damage + "."); //Log
 
-        Invoke("OffDamaged", 1f); //�����ð�
+        Invoke("OffDamaged", invincibleTime); //무적시간
     }
 
     void OffDamaged()
@@ -86,7 +87,7 @@ public class Player : MonoBehaviour
         rend.color = Color.white;
     }
 
-    void Shoot ()
+    void Shoot()
     { 
         if (IsShoot)
         {
@@ -94,7 +95,7 @@ public class Player : MonoBehaviour
             {
                 GameObject a = Instantiate(Bullet, transform.position, Quaternion.identity);
                 a.GetComponent<NormalBullet>().setDir(lastMoveDir);
-                                
+                
                 shootTimer = 0;
             }
             shootTimer += Time.deltaTime;
