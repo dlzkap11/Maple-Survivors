@@ -306,6 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157af43783d160247bc0a11e936c8425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expMarble: {fileID: 450829455393193530, guid: 96cff71805034284b9e04c453ee252ff, type: 3}
   MoveSpeed: 2
   MaxHP: 10
   HP: 0
@@ -445,6 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157af43783d160247bc0a11e936c8425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expMarble: {fileID: 450829455393193530, guid: 96cff71805034284b9e04c453ee252ff, type: 3}
   MoveSpeed: 2
   MaxHP: 10
   HP: 0
@@ -819,6 +821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157af43783d160247bc0a11e936c8425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expMarble: {fileID: 450829455393193530, guid: 96cff71805034284b9e04c453ee252ff, type: 3}
   MoveSpeed: 2
   MaxHP: 10
   HP: 0
@@ -1020,6 +1023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157af43783d160247bc0a11e936c8425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expMarble: {fileID: 450829455393193530, guid: 96cff71805034284b9e04c453ee252ff, type: 3}
   MoveSpeed: 2
   MaxHP: 10
   HP: 0
@@ -1615,6 +1619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157af43783d160247bc0a11e936c8425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expMarble: {fileID: 450829455393193530, guid: 96cff71805034284b9e04c453ee252ff, type: 3}
   MoveSpeed: 2
   MaxHP: 10
   HP: 0
@@ -1897,9 +1902,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1899251546}
   - component: {fileID: 1899251548}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1931,6 +1936,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de41d53385b39b479948268b13a4417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLevel: 0
+  Exp: 0
+  maxExp: 0
+  stageMeso: 0
 --- !u!1 &2073078117
 GameObject:
   m_ObjectHideFlags: 0

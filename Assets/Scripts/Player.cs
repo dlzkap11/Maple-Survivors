@@ -101,5 +101,5 @@ public class Player : MonoBehaviour
             shootTimer += Time.deltaTime;
         }
     }
-       
+
 }
