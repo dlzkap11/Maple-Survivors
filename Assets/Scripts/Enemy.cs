@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    GameObject target;
+    GameObject target; //타겟(플레이어)
     SpriteRenderer rend;
+    public GameObject expMarble; //경험치 구슬
 
     Color normalColor; //기본 색
     Color hitColor; //피격 시 색
@@ -60,10 +61,12 @@ public class Enemy : MonoBehaviour
         HP -= dmg;
         Debug.Log(this + " on damage! -" + dmg); //Log
 
-        if(HP <= 0)
+        if(HP <= 0) //사망 시
         {
             Destroy(gameObject);
             Debug.Log(this + " has destroyed!"); //Log
+
+            dropObj();
         }
         else if (HP > 0)
         {
@@ -86,4 +89,18 @@ public class Enemy : MonoBehaviour
             OnHit(bullet.dmg);
         }
     }
+
+    void dropObj() //드랍(경험치/메소)
+    {
+        //경험치(확정)
+        Instantiate(expMarble, transform.position, Quaternion.identity);
+
+        //메소(확률)
+        /*개인적인 아이디어로 rand % 100하면 0~99 나오잖아.
+          그럼 확률을 20% 이하로 하고싶다고 가정한다면
+          rand해서 나온 값 >= 19 하면 20퍼센트가 속하는 부분이고
+          나머지는 80퍼센트라서 이렇게 구성해도 괜찮을 것 같다.*/
+    }
 }
+
+
