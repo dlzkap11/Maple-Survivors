@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4081349270084935247}
   - component: {fileID: 7473185040642368773}
   - component: {fileID: 1056580172923849133}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: expMarble_3
-  m_TagString: Untagged
+  m_TagString: expMarble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

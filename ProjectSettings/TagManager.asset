@@ -8,6 +8,7 @@ TagManager:
   - Breakable Structure
   - Unbreakable Structure
   - PlayerBullet
+  - expMarble
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Enemy
   - Unbreakable Structure
   - Breakable Structure
-  - 
+  - expMarble
   - 
   - 
   - 
