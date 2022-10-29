@@ -6,16 +6,6 @@ public class expMarble : MonoBehaviour
 {
     public int exp; //°æÇèÄ¡
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")

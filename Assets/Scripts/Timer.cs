@@ -10,12 +10,13 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        
+        Debug.Log("Timer Start"); //Log
     }
 
     void Update()
     {
         time += Time.deltaTime;
+        GameObject.Find("Spawn").GetComponent<Spawn>().timer = time;
 
         timeText[0].text = string.Format("{0:D2}", (int)time / 60 % 60); //분 출력
         timeText[1].text = string.Format("{0:D2}", (int)time % 60); //초 출력
