@@ -8,19 +8,17 @@ public class Spawn : MonoBehaviour
     public GameObject player;
     public float maxSpawnDelay; //스폰까지 걸리는 시간
     public float curSpawnDelay; //딜레이시간
-    public float timer; //임시 타이머
     public float radius; //원 반지름
+    public float timer; //타이머
     
-
     void Start()
     {
-
+        timer = GameObject.Find("Timer").GetComponent<Timer>().time; //시간 동기화
     }
 
     void Update()
     {
         curSpawnDelay += Time.deltaTime;
-        timer += Time.deltaTime;
 
         //스폰 중점
         transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10);
