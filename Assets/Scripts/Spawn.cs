@@ -4,23 +4,21 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    public GameObject enemy;
+    public GameObject[] enemy;
     public GameObject player;
     public float maxSpawnDelay; //스폰까지 걸리는 시간
     public float curSpawnDelay; //딜레이시간
-    public float timer; //임시 타이머
     public float radius; //원 반지름
+    public float timer; //타이머
     
-
     void Start()
     {
-
+        
     }
 
     void Update()
     {
         curSpawnDelay += Time.deltaTime;
-        timer += Time.deltaTime;
 
         //스폰 중점
         transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10);
@@ -32,7 +30,6 @@ public class Spawn : MonoBehaviour
     }
     Vector3 GetRandomPosition()
     {
-
         Vector3 playerPosition = transform.position;
 
         float a = playerPosition.x;
@@ -55,14 +52,14 @@ public class Spawn : MonoBehaviour
 
         if (timer < 5f) //5초 전
         {
-            Instantiate(enemy, GetRandomPosition(), Quaternion.identity);
+            Instantiate(enemy[0], GetRandomPosition(), Quaternion.identity);
             maxSpawnDelay = Random.Range(0f, 3f); //스폰 딜레이(랜덤)
 
             curSpawnDelay = 0; //스폰 딜레이 초기화
         }
         else if (timer > 5f) //5초 후
         {
-            Instantiate(enemy, GetRandomPosition(), Quaternion.identity);
+            Instantiate(enemy[1], GetRandomPosition(), Quaternion.identity);
             maxSpawnDelay = Random.Range(0f, 0.1f); //스폰 딜레이(랜덤)
 
             curSpawnDelay = 0; //스폰 딜레이 초기화
