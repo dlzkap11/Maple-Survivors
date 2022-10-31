@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public int playerLevel; //레벨
-    public int Exp; //현재경험치
-    public int maxExp; //최대경험치
+    public long Exp; //현재경험치
+    public long maxExp; //최대경험치
     public int stageMeso; //메소
 
     void Start()
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     void playerLevelUp()
     {
-        int plusExp = 0; //초과경험치
+        long plusExp = 0; //초과경험치
         if (Exp > maxExp) plusExp = Exp - maxExp; //초과경험치 저장
 
         playerLevel++;
@@ -38,7 +38,8 @@ public class GameManager : MonoBehaviour
 
     void maxExpRefresh()
     {
-        maxExp = (int)Mathf.Pow(1.4f, playerLevel - 1) * 10 + playerLevel * 10; //경험치 공식
+        //maxExp = (long)Mathf.Pow(1.4f, playerLevel - 1) * 10 + playerLevel * 10; (구)공식
+        maxExp = (long) ((playerLevel + 2) * playerLevel * 10); //경험치 공식
         Debug.Log("Max Exp Refresh! MaxExp : " + maxExp); //Log
     }
 }
