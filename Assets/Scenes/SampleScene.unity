@@ -235,6 +235,7 @@ MonoBehaviour:
   enemy:
   - {fileID: 2125595581801265874, guid: dac67e4a08ccec948a9eca0ac45084fe, type: 3}
   - {fileID: 5468364985218216501, guid: 5ddfea3ad5727cc45be84b9ca6ab0415, type: 3}
+  - {fileID: 4240105555045918808, guid: 2cba8f6a9c4c76b42b9de446b3dc26c9, type: 3}
   player: {fileID: 1052218742}
   maxSpawnDelay: 3
   curSpawnDelay: 0

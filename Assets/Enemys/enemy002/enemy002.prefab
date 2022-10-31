@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expMarble: {fileID: 450829455393193530, guid: 96cff71805034284b9e04c453ee252ff, type: 3}
   MoveSpeed: 2
-  MaxHP: 15
+  MaxHP: 20
   HP: 0
 --- !u!61 &5468364985218216496
 BoxCollider2D:
