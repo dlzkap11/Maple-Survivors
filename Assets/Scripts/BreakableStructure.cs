@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BreakableStructure : MonoBehaviour
 {
+    public GameObject[] item; //전리품
     public float HP;
-
+    
     void OnHit(float dmg)
     {
         HP -= dmg;
@@ -26,8 +27,11 @@ public class BreakableStructure : MonoBehaviour
         }
     }
 
-    void dropItem()
+    void dropItem() //현재는 테스트로 expMarble이 나옴
     {
+        int random_item = (int)Random.Range(0, item.Length);
 
+        Instantiate(item[random_item], transform.position, Quaternion.identity);
+        random_item = 0; //초기화
     }
 }
