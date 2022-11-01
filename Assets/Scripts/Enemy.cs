@@ -35,10 +35,8 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-
         targetInit();
-        if (Pause.pause == false)
-            Chase();
+        Chase();
     }
 
     void targetInit() //타겟(플레이어) 초기화

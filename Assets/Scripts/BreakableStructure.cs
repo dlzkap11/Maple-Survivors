@@ -27,7 +27,7 @@ public class BreakableStructure : MonoBehaviour
         }
     }
 
-    void dropItem() 
+    void dropItem() //현재는 테스트로 expMarble이 나옴
     {
         int random_item = (int)Random.Range(0, item.Length);
 

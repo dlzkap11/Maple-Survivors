@@ -32,18 +32,13 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(Pause.pause == false)
         Move();
 
         barSprite.fillAmount = HP / maxHP; //체력 실시간 적용
                 
         Shoot();
     }
-    private void FixedUpdate()
-    {
-        
 
-    }
     void Move()
     {
         float hAxis = Input.GetAxisRaw("Horizontal");   //가로
@@ -65,9 +60,6 @@ public class Player : MonoBehaviour
         {
             lastMoveDir = new Vector3(hAxis, vAxis, 0);
         }
-
-        
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)

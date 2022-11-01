@@ -9,7 +9,6 @@ public class NormalBullet : MonoBehaviour
     public float BulletSpeed = 10f; //총알 속도
     private Vector3 moveDir = Vector3.zero;
 
-
     private void OnBecameInvisible() //화면 밖으로 나가면 삭제
     {
         Destroy(this.gameObject);
