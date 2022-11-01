@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public long Exp; //현재경험치
     public long maxExp; //최대경험치
     public int stageMeso; //메소
+    public Image EXPBar;
 
     void Start()
     {
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (Exp >= maxExp) playerLevelUp(); //레벨업 시
+
+        EXPBar.fillAmount = (float)Exp / (float)maxExp;
     }
 
     void playerLevelUp()
