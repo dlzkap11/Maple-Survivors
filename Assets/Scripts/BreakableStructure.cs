@@ -32,6 +32,7 @@ public class BreakableStructure : MonoBehaviour
         int random_item = (int)Random.Range(0, item.Length);
 
         Instantiate(item[random_item], transform.position, Quaternion.identity);
+        Debug.Log("Drop Item : " + item[random_item]);
         random_item = 0; //√ ±‚»≠
     }
 }
