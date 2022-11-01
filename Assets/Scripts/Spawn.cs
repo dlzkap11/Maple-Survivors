@@ -10,10 +10,11 @@ public class Spawn : MonoBehaviour
     public float curSpawnDelay; //딜레이시간
     public float radius; //원 반지름
     public float timer; //타이머
-    
+    //public Timer timer = new Timer(); //찐 타이머
+
     void Start()
     {
-        
+       
     }
 
     void Update()
@@ -48,7 +49,7 @@ public class Spawn : MonoBehaviour
     }
     void SpawnEnemy()
     {
-        //타이머 미설정으로 인한 임시 시간
+        
 
         if (timer < 5f) //5초 전
         {
@@ -66,4 +67,15 @@ public class Spawn : MonoBehaviour
         }
 
     }
+    
+    void SpecialSpawnEnemy(Vector3 PlayerPosition) //원으로 나오거나 뭉탱이로 확 날라오는 몹 스폰 지역
+    {
+
+        float a = PlayerPosition.x;
+        float b = PlayerPosition.y;
+
+        float x;
+        float y;
+    }
+    
 }
