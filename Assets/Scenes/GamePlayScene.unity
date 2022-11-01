@@ -648,7 +648,7 @@ MonoBehaviour:
   HP: 0
   damage: 50
   invincibleTime: 0.5
-  Bullet: {fileID: 898378930809296576, guid: 4710b730ec516b44999f15e202cff18e, type: 3}
+  Bullet: {fileID: 2895689910142340557, guid: 4260a797d9c834144b7f4615c103f7b5, type: 3}
   IsShoot: 1
   barSprite: {fileID: 1722996420}
 --- !u!212 &1052218744
