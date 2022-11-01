@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if(Pause.pause == false)
         Move();
 
         barSprite.fillAmount = HP / maxHP; //체력 실시간 적용
