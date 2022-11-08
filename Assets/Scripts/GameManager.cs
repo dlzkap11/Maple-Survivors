@@ -32,8 +32,7 @@ public class GameManager : MonoBehaviour
     void playerLevelUp()
     {
         LevelUpPanel.SetActive(true);
-        Input.GetKey(KeyCode.P);
-
+ 
         long plusExp = 0; //초과경험치
         if (Exp > maxExp) plusExp = Exp - maxExp; //초과경험치 저장
 
