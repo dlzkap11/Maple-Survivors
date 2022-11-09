@@ -9,6 +9,8 @@ public class Choice : MonoBehaviour
 
     public void OnClickChoice()
     {
+        Time.timeScale = 1;
+        Pause.pause = false;
         LevelUpPanel.SetActive(false);
     }
 }

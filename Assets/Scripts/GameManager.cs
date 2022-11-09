@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
 
     void playerLevelUp()
     {
+        Time.timeScale = 0;
+        Pause.pause = true;
+
         LevelUpPanel.SetActive(true);
  
         long plusExp = 0; //초과경험치
