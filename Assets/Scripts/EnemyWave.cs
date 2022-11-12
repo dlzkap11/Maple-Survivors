@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyWave : MonoBehaviour
 {
     GameObject target; //타겟(플레이어)
     SpriteRenderer rend;
@@ -35,21 +35,12 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        targetInit();
         if (Pause.pause == false)
-            Chase();
+            Wave();
     }
 
-    void targetInit() //타겟(플레이어) 초기화
+    void Wave()
     {
-        target = GameObject.FindWithTag("Player");
-    }
-
-    void Chase()
-    {
-        transform.position //target 추적
-            = Vector2.MoveTowards(transform.position, target.transform.position, MoveSpeed * 0.001f);
-
         //sprite 변경
         if (target.transform.position.x > transform.position.x)
             rend.flipX = true; //우측이동
@@ -62,7 +53,7 @@ public class Enemy : MonoBehaviour
         HP -= dmg;
         Debug.Log(this + " on damage! -" + dmg); //Log
 
-        if(HP <= 0) //사망 시
+        if (HP <= 0) //사망 시
         {
             Destroy(gameObject);
             Debug.Log(this + " has destroyed!"); //Log
@@ -72,10 +63,10 @@ public class Enemy : MonoBehaviour
         else if (HP > 0)
         {
             StartCoroutine("OnHitEffect");
-        }        
+        }
     }
 
-    IEnumerator OnHitEffect () //피격 시 색 변화
+    IEnumerator OnHitEffect() //피격 시 색 변화
     {
         rend.color = hitColor;
         yield return new WaitForSeconds(0.1f);
@@ -103,5 +94,3 @@ public class Enemy : MonoBehaviour
           나머지는 80퍼센트라서 이렇게 구성해도 괜찮을 것 같다.*/
     }
 }
-
-
