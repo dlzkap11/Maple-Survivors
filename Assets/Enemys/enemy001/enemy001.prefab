@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expMarble: {fileID: 450829455393193530, guid: 96cff71805034284b9e04c453ee252ff, type: 3}
+  hudDamageText: {fileID: 465026055547843374, guid: 3e1a68f1e76765d488903856d3b4bbc1, type: 3}
   MoveSpeed: 2
   MaxHP: 10
   HP: 0
