@@ -7,6 +7,7 @@ public class EnemyWave : MonoBehaviour
     GameObject target; //타겟(플레이어)
     SpriteRenderer rend;
     public GameObject expMarble; //경험치 구슬
+    public GameObject hudDamageText; //데미지 텍스트
 
     Color normalColor; //기본 색
     Color hitColor; //피격 시 색
@@ -51,6 +52,11 @@ public class EnemyWave : MonoBehaviour
     void OnHit(float dmg) //피격 시
     {
         HP -= dmg;
+
+        GameObject hudText = Instantiate(hudDamageText); //데미지 텍스트 출력
+        hudText.transform.position = this.transform.position;
+        hudText.GetComponent<DamageText>().dmg = dmg;
+
         Debug.Log(this + " on damage! -" + dmg); //Log
 
         if (HP <= 0) //사망 시
