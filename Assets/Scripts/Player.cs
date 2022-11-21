@@ -23,10 +23,12 @@ public class Player : MonoBehaviour
 
     public Image barSprite; //체력바
 
+    Animator anim;
+
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
-
+        anim = GetComponent<Animator>();
         HP = maxHP; //체력 초기화
     }
 
@@ -45,6 +47,11 @@ public class Player : MonoBehaviour
         float hAxis = Input.GetAxisRaw("Horizontal");   //가로
         float vAxis = Input.GetAxisRaw("Vertical");     //세로
         transform.Translate(new Vector2(hAxis, vAxis) * MoveSpeed * 0.001f);
+
+        if (hAxis == 0 && vAxis == 0)   //움직임 애니메이션
+            anim.SetBool("isWalking", false);
+        else
+            anim.SetBool("isWalking", true);
 
         switch (hAxis) //sprite 변경
         {
