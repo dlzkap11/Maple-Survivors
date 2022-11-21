@@ -52,7 +52,7 @@ public class Spawn : MonoBehaviour
 
         if (timer < 5f) //5초 전
         {
-            Instantiate(enemy[0], GetRandomPosition(), Quaternion.identity);
+            Instantiate(enemy[3], GetRandomPosition(), Quaternion.identity);
             maxSpawnDelay = Random.Range(0f, 3f); //스폰 딜레이(랜덤)
 
             curSpawnDelay = 0; //스폰 딜레이 초기화
