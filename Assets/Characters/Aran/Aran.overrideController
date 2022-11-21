@@ -7,5 +7,9 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Aran
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: 1aa4e1f2059944142955802948ab86a5, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: f19a820af315b3c418a08345e75c7147, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e5867256acb79c645a43cbdcd9ab35b6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ecb8f1bc94d60b0478bdbc7cc0eef17a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6679775ddb191254a8a91c6b153a7b38, type: 2}
