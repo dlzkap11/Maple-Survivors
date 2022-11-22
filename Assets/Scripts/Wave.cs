@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Wave : MonoBehaviour
 {
     GameObject target; //타겟(플레이어)
     SpriteRenderer rend;
     public GameObject expMarble; //경험치 구슬
     public GameObject hudDamageText; //데미지 텍스트
-    public enum Type { Normal, Flying, None }; //Wave 따로 스크립트 만듬 타입은 일단 필요할 수도 있으니 놔둠
-    public Type MonsterType;
 
+    public enum Type { Normal, Flying, None };
+    public Type MonsterType;
+    Rigidbody2D bat;
+    Vector2 wave;
 
     Color normalColor; //기본 색
     Color hitColor; //피격 시 색
@@ -19,8 +21,12 @@ public class Enemy : MonoBehaviour
     public float damage; //공격력
     public float MaxHP; //최대체력
     public float HP; //현재체력
+    private Vector3 playerposition;
 
-
+    private void Awake()
+    {
+        bat = GetComponent<Rigidbody2D>();
+    }
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
@@ -28,14 +34,18 @@ public class Enemy : MonoBehaviour
         target = GameObject.FindWithTag("Player"); //Player 태그를 타겟으로 지정
         HP = MaxHP;
 
-        damage = 10f;
-
         normalColor = rend.color;
         hitColor = normalColor;
         hitColor.r -= 0.5f;
         hitColor.g -= 0.5f;
         hitColor.b -= 0.5f;
 
+        playerposition = target.transform.position;
+        //wave = transform.position;
+        wave = new Vector2(-transform.position.x, -transform.position.y);
+
+        if (MonsterType == Type.Flying)
+            Monster_flip();
     }
 
     void Update()
@@ -67,7 +77,11 @@ public class Enemy : MonoBehaviour
 
             case Type.Flying:
 
-                
+                bat.AddForce(wave * 0.01f);
+                /*
+                transform.position //target 추적               
+                    = Vector2.MoveTowards(transform.position, playerposition, MoveSpeed * 0.001f);
+                */
                 break;
         }
     }
@@ -75,14 +89,14 @@ public class Enemy : MonoBehaviour
     void OnHit(float dmg) //피격 시
     {
         HP -= dmg;
-        
+
         GameObject hudText = Instantiate(hudDamageText); //데미지 텍스트 출력
         hudText.transform.position = this.transform.position;
         hudText.GetComponent<DamageText>().dmg = dmg;
 
         Debug.Log(this + " on damage! -" + dmg); //Log
 
-        if(HP <= 0) //사망 시
+        if (HP <= 0) //사망 시
         {
             Destroy(gameObject);
             Debug.Log(this + " has destroyed!"); //Log
@@ -92,10 +106,10 @@ public class Enemy : MonoBehaviour
         else if (HP > 0)
         {
             StartCoroutine("OnHitEffect");
-        }        
+        }
     }
 
-    IEnumerator OnHitEffect () //피격 시 색 변화
+    IEnumerator OnHitEffect() //피격 시 색 변화
     {
         rend.color = hitColor;
         yield return new WaitForSeconds(0.1f);
@@ -109,9 +123,7 @@ public class Enemy : MonoBehaviour
             NormalBullet bullet = collision.gameObject.GetComponent<NormalBullet>();
             OnHit(bullet.dmg);
         }
-        
     }
-
 
     void dropObj() //드랍(경험치/메소)
     {
@@ -132,7 +144,9 @@ public class Enemy : MonoBehaviour
         else if (target.transform.position.x < transform.position.x)
             rend.flipX = false; //좌측이동
     }
- 
+    private void OnBecameInvisible() //화면 밖으로 나가면 삭제
+    {
+        if (MonsterType == Type.Flying)
+            Destroy(this.gameObject);
+    }
 }
-
-

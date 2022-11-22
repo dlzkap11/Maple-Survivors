@@ -15,7 +15,7 @@ public class NormalBullet : MonoBehaviour
     }
     void Update()
     {
-        transform.position += moveDir * Time.deltaTime * BulletSpeed;        
+        transform.position += moveDir * Time.deltaTime * BulletSpeed;
     }
     public void setDir(Vector3 dir) //마지막 바라본 방향
     {
