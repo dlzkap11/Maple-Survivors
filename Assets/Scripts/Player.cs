@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
         barSprite.fillAmount = HP / maxHP; //체력 실시간 적용
                 
         Shoot();
+
     }
 
     void Move()
@@ -70,21 +71,32 @@ public class Player : MonoBehaviour
         }
     }
 
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy") //Enemy에게 피격 시
         {
-            OnDamaged();
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            OnDamaged(enemy.damage);
+        }
+    }
+  
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Wave Enemy") //Enemy에게 피격 시
+        {
+            Wave w_enemy = collision.gameObject.GetComponent<Wave>();
+            OnDamaged(w_enemy.damage);
         }
     }
 
-    void OnDamaged()
+    void OnDamaged(float dmg)
     {
         gameObject.layer = 3; // layer = Invincible
-        HP -= Enemy.damage;
+        HP -= dmg;
         rend.color = Color.red; //피격시 색상변화
 
-        Debug.Log("Player on damage! -" + Enemy.damage + "."); //Log
+        Debug.Log("Player on damage! -" + dmg + "."); //Log
 
         Invoke("OffDamaged", invincibleTime); //무적시간
     }

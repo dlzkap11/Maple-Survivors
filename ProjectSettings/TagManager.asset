@@ -10,6 +10,7 @@ TagManager:
   - PlayerBullet
   - expMarble
   - Meso
+  - Wave Enemy
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Unbreakable Structure
   - Breakable Structure
   - Benefit
-  - 
+  - WaveEnemy
   - 
   - 
   - 
