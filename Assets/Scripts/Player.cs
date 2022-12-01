@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
 {
     SpriteRenderer rend;
 
+    public Vector2 inputVec;
+
     public float MoveSpeed; //이동속도
     public float maxHP; //최대체력
     public float HP; //체력
@@ -47,6 +49,7 @@ public class Player : MonoBehaviour
     {
         float hAxis = Input.GetAxisRaw("Horizontal");   //가로
         float vAxis = Input.GetAxisRaw("Vertical");     //세로
+
         transform.Translate(new Vector2(hAxis, vAxis) * MoveSpeed * 0.001f);
 
         if (hAxis == 0 && vAxis == 0)   //움직임 애니메이션

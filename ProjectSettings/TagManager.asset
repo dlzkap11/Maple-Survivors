@@ -11,6 +11,8 @@ TagManager:
   - expMarble
   - Meso
   - Wave Enemy
+  - Ground
+  - Area
   layers:
   - Default
   - TransparentFX
