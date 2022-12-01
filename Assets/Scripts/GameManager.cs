@@ -5,12 +5,20 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+    public Player player;
     public int playerLevel; //레벨
     public long Exp; //현재경험치
     public long maxExp; //최대경험치
     public int stageMeso; //메소
     public Image EXPBar;
     public GameObject LevelUpPanel;
+
+
+    void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
