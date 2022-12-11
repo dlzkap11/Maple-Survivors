@@ -13,7 +13,7 @@ public class Meso : MonoBehaviour
             GameObject.Find("GameManager").GetComponent<GameManager>().stageMeso += meso; //메소 증가
 
             Destroy(gameObject);
-            Debug.Log("Get Meso : " + meso); //Log
+            Debug.Log("Get Meso : " + meso); //Log //dmdkdkkr
         }
     }
 }
