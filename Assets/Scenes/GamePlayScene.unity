@@ -663,7 +663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &383793940
 Animator:
   serializedVersion: 4
@@ -973,7 +973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &627863087
 Animator:
   serializedVersion: 4
@@ -1149,7 +1149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &628314206
 Animator:
   serializedVersion: 4
@@ -1481,7 +1481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &874853240
 Animator:
   serializedVersion: 4
@@ -1863,7 +1863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1062786407
 Animator:
   serializedVersion: 4
@@ -1918,7 +1918,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.09430392, y: -0.027389169}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1929,7 +1929,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.55, y: 0.75}
+  m_Size: {x: 0.40684602, y: 0.7209569}
   m_EdgeRadius: 0
 --- !u!114 &1062786410
 MonoBehaviour:
@@ -11809,7 +11809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1800347829
 Animator:
   serializedVersion: 4
@@ -11864,7 +11864,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.07842466, y: -0.009049028}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11875,7 +11875,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.55, y: 0.75}
+  m_Size: {x: 0.5258694, y: 0.82842475}
   m_EdgeRadius: 0
 --- !u!114 &1800347832
 MonoBehaviour:
@@ -20639,6 +20639,26 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 1aa4e1f2059944142955802948ab86a5, type: 2}
+    - target: {fileID: 882738450364221381, guid: b9aa4f1b4f4993f4d86f34e8b8819e97, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3932905
+      objectReference: {fileID: 0}
+    - target: {fileID: 882738450364221381, guid: b9aa4f1b4f4993f4d86f34e8b8819e97, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6622162
+      objectReference: {fileID: 0}
+    - target: {fileID: 882738450364221381, guid: b9aa4f1b4f4993f4d86f34e8b8819e97, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.016399845
+      objectReference: {fileID: 0}
+    - target: {fileID: 882738450364221381, guid: b9aa4f1b4f4993f4d86f34e8b8819e97, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0019811988
+      objectReference: {fileID: 0}
+    - target: {fileID: 882738450364221381, guid: b9aa4f1b4f4993f4d86f34e8b8819e97, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.42
+      objectReference: {fileID: 0}
     - target: {fileID: 882738450364221383, guid: b9aa4f1b4f4993f4d86f34e8b8819e97, type: 3}
       propertyPath: m_RootOrder
       value: 0
