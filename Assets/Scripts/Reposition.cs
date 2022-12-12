@@ -36,23 +36,24 @@ public class Reposition : MonoBehaviour
         switch (transform.tag)
         {
             case "Ground":
-                if(diffx > diffy)
+                if (Mathf.Abs(diffx - diffy) <= 0.1f || diffx == diffy)
                 {
                     transform.Translate(Vector3.right * dirX * 40);
+                    transform.Translate(Vector3.up * dirY * 40);
+                    Debug.Log("대각선 이동: x = " + diffx + ", y = " + diffy);
+                }
+                else if (diffx > diffy)
+                {
+                    transform.Translate(Vector3.right * dirX * 40);
+                    Debug.Log("x축이동: x = " + diffx + ", y = " + diffy);
                 }
                 else if (diffx < diffy)
                 {
                     transform.Translate(Vector3.up * dirY * 40);
+                    Debug.Log("y축이동: x = " + diffx + ", y = " + diffy);
                 }
-
                 break;
-
-            case "Enemy":
-
-                break;
-
         }
-
 
     }
     void Start()
