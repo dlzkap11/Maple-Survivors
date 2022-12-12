@@ -103,7 +103,7 @@ MonoBehaviour:
   expMarble: {fileID: 450829455393193530, guid: 96cff71805034284b9e04c453ee252ff, type: 3}
   hudDamageText: {fileID: 465026055547843374, guid: 3e1a68f1e76765d488903856d3b4bbc1, type: 3}
   MonsterType: 1
-  MoveSpeed: 10
+  MoveSpeed: 7
   damage: 1
   MaxHP: 100
   HP: 0

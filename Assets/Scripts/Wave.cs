@@ -13,6 +13,7 @@ public class Wave : MonoBehaviour
     public Type MonsterType;
     Rigidbody2D bat;
     Vector2 wave;
+    Vector2 mypos;
 
     Color normalColor; //기본 색
     Color hitColor; //피격 시 색
@@ -41,11 +42,48 @@ public class Wave : MonoBehaviour
         hitColor.b -= 0.5f;
 
         playerposition = target.transform.position;
-        //wave = transform.position;
+        mypos = transform.position;
         wave = new Vector2(-transform.position.x, -transform.position.y);
 
         if (MonsterType == Type.Flying)
             Monster_flip();
+    }
+
+    void GoAway()
+    {
+        float x = playerposition.x;
+        float y = playerposition.y;
+
+        float a = mypos.x;
+        float b = mypos.y;
+
+        float result_x;
+        float result_y;
+        
+        result_x = Mathf.Abs(x - a);
+        result_y = Mathf.Abs(y - b);
+
+       
+        if(x > a && y > b)// 플레이어가 몬스터보다 오른쪽에 있을시
+        {
+            Vector2 Away = new Vector2(result_x, result_y);
+            bat.AddForce(Away * 0.01f * MoveSpeed);
+        }
+        else if(y > b) //플레이어가 몬스터보다 위에 있을시
+        {
+            Vector2 Away = new Vector2(-result_x, result_y);
+            bat.AddForce(Away * 0.01f * MoveSpeed);
+        }
+        else if(x < a)
+        {
+            Vector2 Away = new Vector2(-result_x, -result_y);
+            bat.AddForce(Away * 0.01f * MoveSpeed);
+        }
+        else if(y < b)
+        {
+            Vector2 Away = new Vector2(result_x, -result_y);
+            bat.AddForce(Away * 0.01f * MoveSpeed);
+        }
     }
 
     void Update()
@@ -77,7 +115,8 @@ public class Wave : MonoBehaviour
 
             case Type.Flying:
 
-                bat.AddForce(wave * 0.01f);
+                GoAway();
+                //bat.AddForce(wave * 0.01f);
                 /*
                 transform.position //target 추적               
                     = Vector2.MoveTowards(transform.position, playerposition, MoveSpeed * 0.001f);
