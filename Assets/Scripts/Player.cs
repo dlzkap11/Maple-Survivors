@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
   
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Wave Enemy") //Enemy에게 피격 시
+        if (collision.gameObject.tag == "Wave Enemy") //Wave Enemy에게 피격 시
         {
             Wave w_enemy = collision.gameObject.GetComponent<Wave>();
             OnDamaged(w_enemy.damage);
