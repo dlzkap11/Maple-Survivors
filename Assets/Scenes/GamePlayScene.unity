@@ -752,6 +752,7 @@ MonoBehaviour:
   Bullet: {fileID: 2895689910142340557, guid: 4260a797d9c834144b7f4615c103f7b5, type: 3}
   IsShoot: 1
   barSprite: {fileID: 1722996420}
+  Weapons: []
 --- !u!212 &383793944
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1062,6 +1063,7 @@ MonoBehaviour:
   Bullet: {fileID: 2895689910142340557, guid: 4260a797d9c834144b7f4615c103f7b5, type: 3}
   IsShoot: 1
   barSprite: {fileID: 1722996420}
+  Weapons: []
 --- !u!212 &627863091
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1238,6 +1240,7 @@ MonoBehaviour:
   Bullet: {fileID: 2895689910142340557, guid: 4260a797d9c834144b7f4615c103f7b5, type: 3}
   IsShoot: 1
   barSprite: {fileID: 1722996420}
+  Weapons: []
 --- !u!212 &628314210
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1570,6 +1573,7 @@ MonoBehaviour:
   Bullet: {fileID: 2895689910142340557, guid: 4260a797d9c834144b7f4615c103f7b5, type: 3}
   IsShoot: 1
   barSprite: {fileID: 1722996420}
+  Weapons: []
 --- !u!212 &874853244
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1952,6 +1956,7 @@ MonoBehaviour:
   Bullet: {fileID: 2895689910142340557, guid: 4260a797d9c834144b7f4615c103f7b5, type: 3}
   IsShoot: 1
   barSprite: {fileID: 1722996420}
+  Weapons: []
 --- !u!212 &1062786411
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11898,6 +11903,7 @@ MonoBehaviour:
   Bullet: {fileID: 2895689910142340557, guid: 4260a797d9c834144b7f4615c103f7b5, type: 3}
   IsShoot: 1
   barSprite: {fileID: 1722996420}
+  Weapons: []
 --- !u!212 &1800347833
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20657,7 +20663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 882738450364221381, guid: b9aa4f1b4f4993f4d86f34e8b8819e97, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.42
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 882738450364221383, guid: b9aa4f1b4f4993f4d86f34e8b8819e97, type: 3}
       propertyPath: m_RootOrder
@@ -20711,5 +20717,9 @@ PrefabInstance:
       propertyPath: barSprite
       value: 
       objectReference: {fileID: 1722996420}
+    - target: {fileID: 882738450364221385, guid: b9aa4f1b4f4993f4d86f34e8b8819e97, type: 3}
+      propertyPath: Weapons.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9aa4f1b4f4993f4d86f34e8b8819e97, type: 3}
