@@ -1000,7 +1000,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568666795}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.22, y: -3.08, z: 0}
+  m_LocalPosition: {x: -3.78, y: -1.7, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1035,8 +1035,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb0472ac87cb074cae1f4f3f9fe08f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponLevel: 0
-  dmg: 0
+  weaponLevel: 1
+  dmg: 10
 --- !u!1 &625448668
 GameObject:
   m_ObjectHideFlags: 0
