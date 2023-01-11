@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
 
     public Image barSprite; //체력바
 
+    public GameObject[] Weapons; //무기
+
     Animator anim;
     Collider2D coll;
 
