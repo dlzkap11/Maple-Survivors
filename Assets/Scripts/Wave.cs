@@ -88,9 +88,10 @@ public class Wave : MonoBehaviour
 
     void Update()
     {
+
+        Physics2D.IgnoreLayerCollision(11,12);
         if (MonsterType != Type.Flying)
         {
-            targetInit();
             Monster_flip();
         }
 
@@ -99,10 +100,6 @@ public class Wave : MonoBehaviour
             Chase();
     }
 
-    void targetInit() //타겟(플레이어) 초기화
-    {
-        target = GameObject.FindWithTag("Player");
-    }
 
     void Chase()
     {
