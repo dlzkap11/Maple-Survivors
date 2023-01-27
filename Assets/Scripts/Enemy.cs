@@ -42,18 +42,11 @@ public class Enemy : MonoBehaviour
     {
         if (MonsterType != Type.Flying)
         {
-            targetInit();
             Monster_flip();
         }
 
-
         if (Pause.pause == false)
             Chase();
-    }
-
-    void targetInit() //타겟(플레이어) 초기화
-    {
-        target = GameObject.FindWithTag("Player");
     }
 
     void Chase()
@@ -84,7 +77,8 @@ public class Enemy : MonoBehaviour
 
         if(HP <= 0) //사망 시
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false); //비활성화
+            //Destroy(gameObject);
             Debug.Log(this + " has destroyed!"); //Log
 
             dropObj();
@@ -104,11 +98,14 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "PlayerBullet") //PlayerBullet에 닿을 시
-        {
-            NormalBullet bullet = collision.gameObject.GetComponent<NormalBullet>();
-            OnHit(bullet.dmg);
-        }
+        if (!collision.CompareTag("PlayerBullet"))
+            return;
+
+        //NormalBullet bullet = collision.gameObject.GetComponent<NormalBullet>();
+        Hammer hammer = collision.gameObject.GetComponent<Hammer>();
+        OnHit(hammer.dmg);
+        
+   
         
     }
 
@@ -132,7 +129,11 @@ public class Enemy : MonoBehaviour
         else if (target.transform.position.x < transform.position.x)
             rend.flipX = false; //좌측이동
     }
- 
+    private void OnEnable()//타겟(플레이어) 초기화
+    {
+        target = GameObject.FindWithTag("Player");
+    }
+
 }
 
 

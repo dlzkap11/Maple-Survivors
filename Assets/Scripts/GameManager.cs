@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public PoolManager pool;
     public Player player;
     public int playerLevel; //레벨
     public long Exp; //현재경험치

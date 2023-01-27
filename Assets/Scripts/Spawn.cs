@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
+
+    
     public GameObject[] enemy;
     public GameObject player;
     public float maxSpawnDelay; //스폰까지 걸리는 시간
@@ -12,11 +14,14 @@ public class Spawn : MonoBehaviour
     public float timer; //타이머
     public bool IsSpawn = true;
 
-
-    Vector3 test;
-
+    private void Start()
+    {
+       // GameManager.instance.pool.Get(1);
+    }
     void Update()
     {
+        if (!IsSpawn)
+            return;
         curSpawnDelay += Time.deltaTime;
 
         //스폰 중점
@@ -24,8 +29,9 @@ public class Spawn : MonoBehaviour
 
         if (curSpawnDelay > maxSpawnDelay)
         {
-            SpawnEnemy();
+            Spawner();
         }
+
     }
 
     Vector3 GetRandomPosition()
@@ -46,7 +52,7 @@ public class Spawn : MonoBehaviour
 
         return randomPosition;
     }
-    Vector3 GetPosition()
+    void WaveSpawn()
     {
         Vector3 playerPosition = transform.position;
 
@@ -62,28 +68,33 @@ public class Spawn : MonoBehaviour
         Vector3 randomPosition = new Vector3(x, y, 0);
 
 
-        return randomPosition;
     }
 
+    void Spawner()
+    {
+        GameObject test = GameManager.instance.pool.Get(2);
+        test.transform.position = GetRandomPosition();
+        maxSpawnDelay = Random.Range(0f, 3f);
+        curSpawnDelay = 0;
+    }
     void SpawnEnemy()
     {
-        //타이머 미설정으로 인한 임시 시간
 
-
-
-        //for (int i = 0; i < 10; i++)
         
-        if(IsSpawn == true)
-        {
-            for (int i = 0; i < 10; i++) 
-            Instantiate(enemy[3], GetPosition(), Quaternion.identity);
+
+        /*
+        Instantiate(enemy[0], GetRandomPosition(), Quaternion.identity);         
+        maxSpawnDelay = Random.Range(0f, 3f); //스폰 딜레이(랜덤)         
+        curSpawnDelay = 0; //스폰 딜레이 초기화
+        */
 
 
-            maxSpawnDelay = Random.Range(0f, 3f); //스폰 딜레이(랜덤)
+      
+        //WaveSpawn();
+ 
 
-            curSpawnDelay = 0; //스폰 딜레이 초기화
-        }
-        
+
+
         /*
         if (timer < 5f) //5초 전
         {

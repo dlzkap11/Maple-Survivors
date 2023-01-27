@@ -28,11 +28,13 @@ public class Player : MonoBehaviour
     public GameObject[] Weapons; //무기
 
     Animator anim;
+    Collider2D coll;
 
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        coll = GetComponent<Collider2D>();
         HP = maxHP; //체력 초기화
     }
 
@@ -83,18 +85,22 @@ public class Player : MonoBehaviour
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             OnDamaged(enemy.damage);
+           
         }
-    }
-  
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Wave Enemy") //Wave Enemy에게 피격 시
-        {
-            Wave w_enemy = collision.gameObject.GetComponent<Wave>();
-            OnDamaged(w_enemy.damage);
-        }
-    }
 
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.CompareTag("Wave Enemy"))
+            return;
+        switch (transform.tag)          
+        {              
+            case "Player":                
+                Wave w_enemy = collision.gameObject.GetComponent<Wave>();                 
+                OnDamaged(w_enemy.damage);                
+                break;    
+        }       
+    }
     void OnDamaged(float dmg)
     {
         gameObject.layer = 3; // layer = Invincible
