@@ -72,7 +72,7 @@ public class Spawn : MonoBehaviour
 
     void Spawner()
     {
-        GameObject test = GameManager.instance.pool.Get(3);
+        GameObject test = GameManager.instance.pool.Get(2);
         test.transform.position = GetRandomPosition();
         maxSpawnDelay = Random.Range(0f, 3f);
         curSpawnDelay = 0;

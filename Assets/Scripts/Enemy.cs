@@ -45,12 +45,9 @@ public class Enemy : MonoBehaviour
             Monster_flip();
         }
 
-
         if (Pause.pause == false)
             Chase();
     }
-
-
 
     void Chase()
     {
@@ -80,7 +77,8 @@ public class Enemy : MonoBehaviour
 
         if(HP <= 0) //사망 시
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false); //비활성화
+            //Destroy(gameObject);
             Debug.Log(this + " has destroyed!"); //Log
 
             dropObj();
@@ -102,10 +100,12 @@ public class Enemy : MonoBehaviour
     {
         if (!collision.CompareTag("PlayerBullet"))
             return;
-         
-        NormalBullet bullet = collision.gameObject.GetComponent<NormalBullet>();          
-        OnHit(bullet.dmg);
 
+        //NormalBullet bullet = collision.gameObject.GetComponent<NormalBullet>();
+        Hammer hammer = collision.gameObject.GetComponent<Hammer>();
+        OnHit(hammer.dmg);
+        
+   
         
     }
 
