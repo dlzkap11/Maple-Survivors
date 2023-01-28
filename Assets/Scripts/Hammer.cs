@@ -9,6 +9,10 @@ public class Hammer : MonoBehaviour
     public float dmg; //데미지
 
     private float spinSpeed; //회전속도
+    private Vector3 vec;
+
+    [SerializeField]
+    GameObject player;
     
     void Start()
     {
@@ -18,7 +22,8 @@ public class Hammer : MonoBehaviour
 
     void Update()
     {
-        transform.RotateAround(Vector3.zero, Vector3.back, spinSpeed);
+        vec = player.transform.position;
+        transform.RotateAround(vec, Vector3.back, spinSpeed);
     }
     
 }
