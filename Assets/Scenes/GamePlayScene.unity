@@ -663,7 +663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &383793940
 Animator:
   serializedVersion: 4
@@ -820,6 +820,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &440020977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 440020979}
+  - component: {fileID: 440020978}
+  m_Layer: 0
+  m_Name: PoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &440020978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440020977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa060b66e05b5d4d83ff275a57c7f78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 2125595581801265874, guid: dac67e4a08ccec948a9eca0ac45084fe, type: 3}
+  - {fileID: 5468364985218216501, guid: 5ddfea3ad5727cc45be84b9ca6ab0415, type: 3}
+  - {fileID: 4240105555045918808, guid: 2cba8f6a9c4c76b42b9de446b3dc26c9, type: 3}
+  - {fileID: 5918181343484995379, guid: 72dd24de77913be40919f30c85b733b9, type: 3}
+  - {fileID: 7866852012093492083, guid: 1f798a441b97b0d428828a8352e01e8c, type: 3}
+--- !u!4 &440020979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440020977}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.3252387, y: 0.29849726, z: -1.8798227}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &497982365
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,9 +939,9 @@ GameObject:
   - component: {fileID: 568666799}
   - component: {fileID: 568666798}
   - component: {fileID: 568666801}
+  - component: {fileID: 568666797}
   - component: {fileID: 568666796}
   - component: {fileID: 568666800}
-  - component: {fileID: 568666797}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: PlayerBullet
@@ -1005,7 +1055,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &568666800
 CircleCollider2D:
@@ -1037,7 +1087,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponLevel: 1
   dmg: 10
-  player: {fileID: 1052218742}
 --- !u!1 &625448668
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,7 +1183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &627863087
 Animator:
   serializedVersion: 4
@@ -1311,7 +1360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &628314206
 Animator:
   serializedVersion: 4
@@ -1644,7 +1693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &874853240
 Animator:
   serializedVersion: 4
@@ -2027,7 +2076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1062786407
 Animator:
   serializedVersion: 4
@@ -2613,6 +2662,7 @@ MonoBehaviour:
   - {fileID: 2520130655322239268, guid: bebf5387f0f609f42925e4dc0d9648f7, type: 3}
   - {fileID: 705821642487587917, guid: c68254b1318d8fa4bb1ac556f1118d2d, type: 3}
   - {fileID: 6528840905958399905, guid: 8bd2d2733d6f95c4690dc5c2747ef8a8, type: 3}
+  HP: 1
 --- !u!1 &1469884184
 GameObject:
   m_ObjectHideFlags: 0
@@ -11458,7 +11508,7 @@ Transform:
   - {fileID: 2090581860}
   - {fileID: 1592056662}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1640411930
 GameObject:
@@ -11973,7 +12023,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1800347829
 Animator:
   serializedVersion: 4
@@ -16404,7 +16454,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1899251548
 MonoBehaviour:
@@ -16418,7 +16468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de41d53385b39b479948268b13a4417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 0}
+  pool: {fileID: 440020978}
   player: {fileID: 1052218746}
   playerLevel: 0
   Exp: 0
@@ -16536,7 +16586,7 @@ RectTransform:
   - {fileID: 284622457}
   - {fileID: 1283948513}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
