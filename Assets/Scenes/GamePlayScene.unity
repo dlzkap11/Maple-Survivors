@@ -889,9 +889,9 @@ GameObject:
   - component: {fileID: 568666799}
   - component: {fileID: 568666798}
   - component: {fileID: 568666801}
-  - component: {fileID: 568666797}
   - component: {fileID: 568666796}
   - component: {fileID: 568666800}
+  - component: {fileID: 568666797}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: PlayerBullet
@@ -1017,7 +1017,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.015, y: 0.025}
@@ -2613,7 +2613,6 @@ MonoBehaviour:
   - {fileID: 2520130655322239268, guid: bebf5387f0f609f42925e4dc0d9648f7, type: 3}
   - {fileID: 705821642487587917, guid: c68254b1318d8fa4bb1ac556f1118d2d, type: 3}
   - {fileID: 6528840905958399905, guid: 8bd2d2733d6f95c4690dc5c2747ef8a8, type: 3}
-  HP: 1
 --- !u!1 &1469884184
 GameObject:
   m_ObjectHideFlags: 0
