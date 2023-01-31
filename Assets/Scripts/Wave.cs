@@ -156,8 +156,8 @@ public class Wave : MonoBehaviour
     {
         if (collision.gameObject.tag == "PlayerBullet") //PlayerBulletø° ¥Í¿ª Ω√
         {
-            NormalBullet bullet = collision.gameObject.GetComponent<NormalBullet>();
-            OnHit(bullet.dmg);
+            float dmg = collision.gameObject.GetComponent<Bullet>().damage;
+            OnHit(dmg);
         }
     }
 

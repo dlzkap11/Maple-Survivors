@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class NormalBullet : MonoBehaviour
 {
-    public float dmg; //총알 데미지
-
     public float BulletSpeed = 10f; //총알 속도
     private Vector3 moveDir = Vector3.zero;
 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6071011558470508986}
   - component: {fileID: 8189699310957378628}
   - component: {fileID: 3274842210641987713}
+  - component: {fileID: 2976869862302187289}
   - component: {fileID: 6991772433031853705}
   - component: {fileID: 8040922843863858438}
   - component: {fileID: 2618878647819518401}
@@ -97,11 +98,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2895689910142340557}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb62d8386dd3dc14ba1a59c36258ff94, type: 3}
+  m_Script: {fileID: 11500000, guid: 1194783bc422ab342b5f04c69120e229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 10
-  BulletSpeed: 13
+  dmg: 0
+  BulletSpeed: 10
+--- !u!114 &2976869862302187289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2895689910142340557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0077c411665b5147a969f1829ee9553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!50 &6991772433031853705
 Rigidbody2D:
   serializedVersion: 4
