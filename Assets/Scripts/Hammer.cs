@@ -20,7 +20,8 @@ public class Hammer : MonoBehaviour
     void Update()
     {
         vec = player.transform.position;
-        transform.RotateAround(vec, Vector3.back, spinSpeed);
+        transform.Rotate(Vector3.back * spinSpeed); //해머 자체 회전
+        transform.RotateAround(vec, Vector3.back, spinSpeed); //플레이어 중심을 회전
     }
     
 }
