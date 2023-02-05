@@ -126,7 +126,7 @@ public class Player : MonoBehaviour
             {
                 GameObject a = Instantiate(Bullet, transform.position, Quaternion.identity);
                 a.GetComponent<NormalBullet>().setDir(lastMoveDir);
-                
+
                 shootTimer = 0;
             }
             shootTimer += Time.deltaTime;

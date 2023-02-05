@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8535342009280986780}
   - component: {fileID: 6022606470441706338}
-  - component: {fileID: 1099339205751920551}
+  - component: {fileID: 1170709392349317634}
+  - component: {fileID: 334189037667097330}
   - component: {fileID: 4842763190808799663}
   - component: {fileID: 5594640842323239456}
   - component: {fileID: 462481856260611461}
@@ -88,7 +89,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1099339205751920551
+--- !u!114 &1170709392349317634
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,11 +98,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 728666338128696043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb62d8386dd3dc14ba1a59c36258ff94, type: 3}
+  m_Script: {fileID: 11500000, guid: 1194783bc422ab342b5f04c69120e229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 10
-  BulletSpeed: 13
+  BulletSpeed: 10
+--- !u!114 &334189037667097330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728666338128696043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0077c411665b5147a969f1829ee9553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  level: 0
 --- !u!50 &4842763190808799663
 Rigidbody2D:
   serializedVersion: 4

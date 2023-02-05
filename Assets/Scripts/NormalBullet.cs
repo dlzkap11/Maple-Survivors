@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class NormalBullet : MonoBehaviour
 {
-    public float dmg; //총알 데미지
-
+    [SerializeField]
     public float BulletSpeed = 10f; //총알 속도
+
     private Vector3 moveDir = Vector3.zero;
 
     private void OnBecameInvisible() //화면 밖으로 나가면 삭제

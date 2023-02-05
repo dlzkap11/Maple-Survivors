@@ -101,9 +101,8 @@ public class Enemy : MonoBehaviour
         if (!collision.CompareTag("PlayerBullet"))
             return;
 
-        //NormalBullet bullet = collision.gameObject.GetComponent<NormalBullet>();
-        Hammer hammer = collision.gameObject.GetComponent<Hammer>();
-        OnHit(hammer.dmg);
+        float dmg = collision.gameObject.GetComponent<Bullet>().damage;
+        OnHit(dmg);
         
    
         

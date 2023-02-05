@@ -5,25 +5,14 @@ using UnityEngine;
 public class BreakableStructure : MonoBehaviour
 {
     public GameObject[] item; //傈府前
-    public float HP;
     
-    void OnHit(float dmg)
-    {
-        HP -= dmg;
-
-        if (HP <= 0)
-        {
-            Destroy(gameObject);
-            dropItem(); //傈府前 靛而
-        }        
-    }
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "PlayerBullet")
         {
-            NormalBullet bullet = collision.gameObject.GetComponent<NormalBullet>();
-            OnHit(bullet.dmg);
+            Destroy(gameObject);
+            Debug.Log("Box has destroyed!");
+            dropItem(); //傈府前 靛而
         }
     }
 
